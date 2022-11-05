@@ -1,12 +1,11 @@
 export interface IFile {
-    name: string;
-    type: "FILE"
+    name: string
 }
 
-export const File = ({name, type}: IFile) => {
+export const File = ({ name }: IFile) => {
     return <div>File: {name}</div>
 }
 
-export const fileStrategy = (name: string, type: "FILE") => {
-    return <File name={name} type={type}/>
+export const fileStrategy = (name: string) => {
+    return <File name={name}/>
 }

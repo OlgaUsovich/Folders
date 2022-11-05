@@ -1,6 +1,12 @@
 import { FoldersTree } from "./components/FoldersTree";
 
-const data = {
+export interface IData {
+  name: string;
+  type: "FOLDER" | "FILE";
+  children?: IData[];
+}
+
+const data: IData = {
   name: "tree",
   type: "FOLDER",
   children: [

@@ -1,27 +1,25 @@
-import { fileStrategy, IFile } from "./File";
 import { v4 as uuidv4 } from 'uuid';
+import { IData } from '../App';
+import { chooseStrategy } from "../strategy-func";
 
 interface IFolder {
   name: string;
-  type: "FOLDER";
-  children: (IFolder | IFile)[];
+  children?: IData[];
 }
 
-export const Folder = ({name, type, children}: IFolder) => {
+export const Folder = ({name, children}: IFolder) => {
   return (
     <div>
       Folder:{name}
+      {children &&
       <ul>
-        {children.map((child) =>
-          child.type === "FILE"
-          ? <li key={uuidv4()}>{fileStrategy(child.name, child.type)}</li>
-          : <li key={uuidv4()}>{folderStrategy(child.name, child.type, child.children)}</li>
+        {children.map((child) =><li key={uuidv4()}>{chooseStrategy(child.type)(child.name, child.children)}</li>
         )}
-      </ul>
+      </ul>}
     </div>
   );
 };
 
-export const folderStrategy = (name: string, type: "FOLDER", children: (IFolder | IFile)[]) => {
-    return <Folder name={name} type={type} children={children} />
+export const folderStrategy = (name: string, children?: IData[]) => {
+    return <Folder name={name} children={children} />
 }

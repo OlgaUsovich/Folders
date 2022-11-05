@@ -1,16 +1,10 @@
-import { folderStrategy } from "./Folder";
+import { IData } from "../App";
+import { chooseStrategy } from "../strategy-func";
 
-export interface IFile {
-  name: string;
-  type: "FILE";
+interface IProps {
+  data: IData;
 }
 
-interface IFolder {
-  name: string;
-  type: "FOLDER";
-  children: (IFolder | IFile)[];
-}
-
-export const FoldersTree = ({data}: any) => {
-  return folderStrategy(data.name, data.type, data.children)
+export const FoldersTree = ({data}: IProps) => {
+  return chooseStrategy(data.type)(data.name, data.children)
 };
