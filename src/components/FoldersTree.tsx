@@ -5,6 +5,9 @@ interface IProps {
   data: IData;
 }
 
-export const FoldersTree = ({data}: IProps) => {
-  return chooseStrategy(data.type)(data.name, data.children)
+export const FoldersTree = ({ data }: IProps) => {
+  return chooseStrategy(data.type)({
+    name: data.name,
+    children: data.children,
+  });
 };

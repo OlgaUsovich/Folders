@@ -1,10 +1,12 @@
-import { FoldersTree } from "./components/FoldersTree";
+import { FoldersTree } from "./components";
 
 export interface IData {
   name: string;
   type: "FOLDER" | "FILE";
   children?: IData[];
 }
+
+export type ShortData = Omit<IData, "type">;
 
 const data: IData = {
   name: "tree",
@@ -35,8 +37,8 @@ const data: IData = {
   ],
 };
 
-function App() {
+const App = () => {
   return <FoldersTree data={data} />;
-}
+};
 
 export default App;

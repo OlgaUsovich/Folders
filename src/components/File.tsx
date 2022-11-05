@@ -1,9 +1,9 @@
-import { IData } from "../App"
+import { ShortData } from "../App";
 
-export const File = ({ name }: Omit<IData, "type">) => {
-    return <div>File: {name}</div>
-}
+export const File = ({ name }: ShortData) => {
+  return <div>File: {name}</div>;
+};
 
-export const fileStrategy = (name: string) => {
-    return <File name={name}/>
-}
+export const fileStrategy = ({ name }: ShortData) => {
+  return <File name={name} />;
+};
