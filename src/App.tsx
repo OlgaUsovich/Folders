@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FoldersTree } from "./components/FoldersTree";
+
+const data = {
+  name: "tree",
+  type: "FOLDER",
+  children: [
+    { name: "folder1", type: "FOLDER", children: [] },
+    {
+      name: "folder2",
+      type: "FOLDER",
+      children: [
+        {
+          name: "folder21",
+          type: "FOLDER",
+          children: [
+            { name: "file211", type: "FILE" },
+            { name: "file212", type: "FILE" },
+            { name: "file213", type: "FILE" },
+          ],
+        },
+        { name: "folder22", type: "FOLDER", children: [] },
+      ],
+    },
+    {
+      name: "folder3",
+      type: "FOLDER",
+      children: [{ name: "file31", type: "FILE" }],
+    },
+  ],
+};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <FoldersTree data={data} />;
 }
 
 export default App;
