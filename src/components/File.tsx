@@ -1,8 +1,6 @@
-export interface IFile {
-    name: string
-}
+import { IData } from "../App"
 
-export const File = ({ name }: IFile) => {
+export const File = ({ name }: Omit<IData, "type">) => {
     return <div>File: {name}</div>
 }
 

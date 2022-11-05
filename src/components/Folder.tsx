@@ -2,12 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { IData } from '../App';
 import { chooseStrategy } from "../strategy-func";
 
-interface IFolder {
-  name: string;
-  children?: IData[];
-}
-
-export const Folder = ({name, children}: IFolder) => {
+export const Folder = ({name, children}: Omit<IData, "type">) => {
   return (
     <div>
       Folder:{name}
