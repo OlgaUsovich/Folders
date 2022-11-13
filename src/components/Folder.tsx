@@ -1,11 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
 import { ShortData } from "../App";
 import { chooseStrategy } from "../strategy-func";
+import { SizedFolderIcon } from "./styles";
 
 export const Folder = ({ name, children }: ShortData) => {
   return (
     <div>
-      Folder:{name}
+      <SizedFolderIcon /> {name}
       {children && (
         <ul>
           {children.map((child) => (
