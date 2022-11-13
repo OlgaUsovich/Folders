@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/folders/static/js/main.8cf8739d.js",
+    "static/media/file-icon.svg": "/folders/static/media/file-icon.60bb582364006c4c3d4efb04217950cc.svg",
+    "static/media/folder-icon.svg": "/folders/static/media/folder-icon.a1c06f3e1809b2fbaf43a74de8d03abd.svg",
+    "index.html": "/folders/index.html",
+    "main.8cf8739d.js.map": "/folders/static/js/main.8cf8739d.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.8cf8739d.js"
+  ]
+}
