@@ -13,3 +13,14 @@ export const SizedFolderIcon = styled(FolderIcon)`
 export const SizedFileIcon = styled(FileIcon)`
   ${sharedIconStyle};
 `;
+
+export const DataList = styled.ul`
+    list-style: none;
+`
+
+export const Button = styled.button<{ isOpen: boolean, hasChildren: boolean }>`
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transform: ${(props) => (props.isOpen && props.hasChildren ? "rotate(90deg)" : 0 )};
+`;
